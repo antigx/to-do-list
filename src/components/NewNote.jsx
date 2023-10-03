@@ -4,12 +4,10 @@ import SaveButton from "./buttons/SaveButton";
 import CancelButton from "./buttons/CancelButton";
 
 const initialState = {
-  id: 9,
-  title: "Título",
+  title: "",
   text: "",
   color: "#FFFFFF",
   favorite: false,
-  createdAt: new Date(),
 };
 
 const NewNote = (props) => {
@@ -35,14 +33,17 @@ const NewNote = (props) => {
   return (
     <div className="mx-auto my-4 border-2 w-1/2 bg-white rounded-lg">
       <div className="flex justify-between p-2">
-        <label htmlFor="title"></label>
-        <input
-          type="text"
-          name="title"
-          className="w-full font-medium"
-          value={fields.title}
-          onChange={handleFieldsChange}
-        />
+        <label htmlFor="ftitle" className="w-full font-medium">
+          <input
+            id="ftitle"
+            type="text"
+            name="title"
+            className="w-full font-medium"
+            placeholder="Título"
+            value={fields.title}
+            onChange={handleFieldsChange}
+          />
+        </label>
 
         <FavoriteButton
           favorite={fields.favorite}
@@ -52,13 +53,20 @@ const NewNote = (props) => {
         />
       </div>
       <hr />
-      <div className="flex justify-between p-4 h-fit shadow-inner">
-        <textarea
-          name="text"
-          onInput={handleFieldsChange}
-          className="w-full min-h-[4rem] outline-none resize-none bg-transparent"
-          value={fields.text}
-        ></textarea>
+      <div className="flex justify-between p-4 h-full shadow-inner">
+        <label
+          htmlFor="ftext"
+          className="w-full min-h-min outline-none resize-none bg-transparent"
+        >
+          <textarea
+            id="ftext"
+            name="text"
+            placeholder="Descrição"
+            onChange={handleFieldsChange}
+            className="w-full min-h-min outline-none resize-none bg-transparent"
+            value={fields.text}
+          ></textarea>
+        </label>
       </div>
 
       {isTextAreaChanged && (

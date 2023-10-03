@@ -9,12 +9,11 @@ const CardNote = ({ toDo, functions }) => {
 
   const editCard = (editedFields) => {
     setEditing(!editing);
-    functions.editToDo(editedFields.id, editedFields);
+    functions.updateToDo(editedFields.id, editedFields);
   };
 
   const updateFields = (fieldsToUpdate) => {
     setUpdatedFields({ ...updatedFields, ...fieldsToUpdate });
-    console.log(updatedFields, fieldsToUpdate);
   };
 
   return (
@@ -28,7 +27,12 @@ const CardNote = ({ toDo, functions }) => {
         editing={editing}
         functions={{
           updateFields,
-          toggleFavorite: () => functions.toggleFavorite(toDo.id),
+          toggleFavorite: () => {
+            functions.updateToDo(toDo.id, {
+              favorite: !toDo.favorite,
+            });
+            console.log(!toDo.favorite);
+          },
         }}
       />
       <CardNoteBody
