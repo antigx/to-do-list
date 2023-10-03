@@ -41,7 +41,7 @@ npm install
 npm run dev
 ```
 
-The application will be available at [http://localhost:3000](http://localhost:3000/).
+The application will be available at [http://localhost](http://localhost) in the PORT displayed in the terminal.
 
 ## Usage
 
