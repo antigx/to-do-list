@@ -13,7 +13,7 @@ const CardNoteBody = (props) => {
           value={props.text}
         />
       ) : (
-        <p>{props.text}</p>
+        <p className="whitespace-normal break-words">{props.text}</p>
       )}
     </div>
   );

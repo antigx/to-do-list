@@ -14,7 +14,7 @@ const ColorPickerButton = ({ functions, id }) => {
   };
 
   const handleColorSelect = (color) => {
-    functions.changeBgColor(id, color);
+    functions.updateToDo(id, { color: color });
     closeModal();
   };
 

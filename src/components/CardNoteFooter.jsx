@@ -21,7 +21,7 @@ const CardNoteFooter = (props) => {
             <EditButton editCard={props.functions.startEditingCard} />
             <ColorPickerButton
               functions={{
-                changeBgColor: props.functions.changeBgColor,
+                updateToDo: props.functions.updateToDo,
                 selectElementById,
               }}
               id={props.id}
